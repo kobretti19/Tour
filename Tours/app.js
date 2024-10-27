@@ -1,7 +1,16 @@
-const express = require("express");
-const app = express();
-console.log("hello");
+const express = require('express');
+const morgan = require('morgan');
+const tourRouter = require('./routes/tourRoutes');
+const userRouter = require('./routes/userRoutes');
 
-console.log("hello");
-console.log("hello");
+const app = express();
+
+app.use(morgan('dev'));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+
 module.exports = app;
