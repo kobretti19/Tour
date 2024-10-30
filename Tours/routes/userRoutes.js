@@ -4,8 +4,10 @@ const authController = require('../controllers/authController');
 const router = express.Router();
 
 router.post('/signup', authController.signup);
+router.post('/login', authController.login);
+router.post('/', authController.login);
 
-router.route('/').get(userController.getAll).post(userController.create);
+router.route('/new').get(userController.renderSingUp);
 
 router
   .route(':/id')

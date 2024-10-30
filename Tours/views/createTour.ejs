@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>createTour</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <header><%- include("partials/header") %></header>
+  <body>
+    <main>
+      <div class="form-container">
+        <form class="form" action="/create/new" method="post">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="text" name="difficulty" placeholder="difficulty" />
+          <input
+            type="number"
+            step=".01"
+            name="duration"
+            placeholder="duration"
+          />
+          <input type="number" name="price" placeholder="price" />
+          <input type="text" name="summary" placeholder="summary" />
+          <input type="text" name="description" placeholder="description" />
+          <input type="text" name="imageCover" placeholder="imageCover" />
+          <input type="text" name="images" placeholder="images" />
+          <input type="date" name="createdAt" placeholder="createdAt" />
+          <br />
+          <div class="btn-container">
+            <button class="btn" type="submit">Create</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

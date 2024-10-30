@@ -37,17 +37,24 @@ const userSchema = new mongoose.Schema({
       message: 'Password are not the same!',
     },
   },
+  passwordChangedAt: Date,
 });
 
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
 
-  //Hash the password with cost
   this.password = await bcrypt.hash(this.password, 12);
 
   this.passwordConfirm = undefined;
   next();
 });
+
+userSchema.methods.correctPassword = async function (
+  candidatePassword,
+  userPassword
+) {
+  return await bcrypt.compare(candidatePassword, userPassword);
+};
 
 const User = mongoose.model('User', userSchema);
 

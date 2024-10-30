@@ -1,0 +1,227 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #a5bba5;
+}
+main {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 110px;
+  /* background-color: #262626; */
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  background-color: #02412c94;
+}
+.nav-login {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 15px;
+}
+.nav-login input {
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+}
+.btn-nav {
+  padding: 10px 25px;
+  display: block;
+  height: fit-content;
+  border: none;
+  border-radius: 8px;
+  background-color: #a5bba5;
+  color: white;
+}
+.btn-nav:hover {
+  cursor: pointer;
+  font-size: 16px;
+}
+.link-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  padding: 10px 10px;
+}
+a:link {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 16px;
+}
+a:visited {
+  color: rgb(255, 255, 255);
+}
+a:hover {
+  color: rgb(204, 197, 197);
+  font-size: 20px;
+}
+a:active {
+  color: rgb(255, 255, 255);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 4rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 4rem;
+}
+.movies-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 400px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  color: white;
+  background: linear-gradient(transparent 60%, rgba(0, 0, 0, 3));
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px gray;
+  transition: 0.5s ease;
+}
+
+.img-tag {
+  border-radius: 10px;
+}
+.movies-container img.overlay {
+  mix-blend-mode: overlay;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.movies-container:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+.title-text {
+  position: absolute;
+  left: 4rem;
+  top: 5rem;
+  font-size: 1.7rem;
+  max-width: 50%;
+
+  color: white;
+}
+.top-right {
+  position: absolute;
+  top: -5px;
+  right: 12px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 24px;
+}
+.readmore-link {
+  position: absolute;
+  bottom: 10%;
+  margin: auto;
+}
+.maininfo-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  color: whitesmoke;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.info-left-container {
+  width: 20%;
+  height: 50%;
+}
+.title-container {
+  width: 40%;
+  height: fit-content;
+  margin-left: -40px;
+  padding-top: 8.5rem;
+}
+input {
+  margin: 15px 23%;
+  width: 50%;
+  padding: 10px;
+  /* margin: auto; */
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  padding: 7px 15px;
+  border-radius: 8px;
+}
+.btn:hover {
+  cursor: pointer;
+  font-size: 14px;
+  background-color: rgb(199, 198, 198);
+}
+.dropdown {
+  display: inline-block;
+}
+.dropdown button {
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 20px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown a {
+  display: block;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+.dropdown .content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 100px;
+  box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.784);
+  border-radius: 8px;
+}
+.dropdown:hover .content {
+  display: block;
+}
+.dropdown:hover button {
+  border-radius: 10px;
+  font-size: 22px;
+}
+.dropdown a:hover {
+  background-color: #1a1a1a27;
+  color: rgb(198, 198, 198);
+}
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

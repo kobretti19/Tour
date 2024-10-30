@@ -1,23 +1,22 @@
-const app = require("./app");
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
+const app = require('./app');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 
-dotenv.config({ path: "./config.env" });
+dotenv.config({ path: './config.env' });
 const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
+  '<PASSWORD>',
   process.env.DATABASE_PASSWORD
 );
 const init = async () => {
   try {
     await mongoose.connect(DB);
-    console.log("Successfully conected to database");
+    console.log('Successfully conected to database');
   } catch (err) {
     console.log(err);
   }
 };
 init();
-
 app.listen(process.env.PORT, (err) => {
-  if (err) console.log("Server cannot start");
+  if (err) console.log('Server cannot start');
   console.log(`Server started succussfully at port number:${process.env.PORT}`);
 });

@@ -1,0 +1,14 @@
+<% tours.forEach((tour)=>{%>
+<div class="movies-container">
+  <img
+    class="img-tag overlay"
+    src="<%=tour.imageCover%>"
+    height="100%"
+    width="100%"
+  />
+  <div class="top-right"><p><%=tour.price%>$</p></div>
+  <div class="readmore-link">
+    <a href="/homepage/<%=tour.id %>"><%=tour.name%></a>
+  </div>
+</div>
+<%}) %>

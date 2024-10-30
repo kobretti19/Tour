@@ -3,6 +3,10 @@ const User = require('../models/userModel');
 exports.getAll = async (req, res) => {
   try {
     const users = await User.find();
+    res.status(200).json({
+      status: 'success',
+      data: users,
+    });
   } catch (err) {
     res.status(404).json({
       status: 'fail',
@@ -55,6 +59,16 @@ exports.delete = (req, res) => {
       status: 'error',
       message: 'This route is not yet defined!',
     });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
+};
+exports.renderSingUp = (req, res) => {
+  try {
+    res.render('users');
   } catch (err) {
     res.status(404).json({
       status: 'fail',
