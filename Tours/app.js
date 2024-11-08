@@ -24,7 +24,7 @@ app.use('/', viewRouter);
 app.use('/homepage', tourRouter);
 app.use('/tours', tourRouter);
 app.use('/create', tourRouter);
-app.use('/users', userRouter);
+app.use('/users', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 module.exports = app;

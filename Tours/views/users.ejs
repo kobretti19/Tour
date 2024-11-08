@@ -10,8 +10,15 @@
   <body>
     <main>
       <div class="form-container">
-        <form class="form" action="/users/signUp" method="post">
-          <input type="text" name="name" placeholder="Name" />
+        <form
+          class="form"
+          action="/users/signUp"
+          method="post"
+          enctype="
+        multipart/form-data"
+        >
+          <input id="photo" type="file" name="name" placeholder="Name" />
+          <input id="name" type="text" name="name" placeholder="Name" />
           <input type="text" name="email" placeholder="email" />
           <input type="text" name="password" placeholder="password" />
           <input

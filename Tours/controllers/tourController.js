@@ -81,10 +81,12 @@ exports.createWeb = async (req, res) => {
     });
   }
 };
+
 exports.create = async (req, res) => {
   try {
     const tour = Tour.create(
       req.body
+
       //   {
       //   name: req.body.name,
       //   duration: req.body.duration,
@@ -99,7 +101,7 @@ exports.create = async (req, res) => {
 
     res.status(201).json({
       status: 'success',
-      data: req.body,
+      data: tour,
     });
   } catch (err) {
     res.status(404).json({

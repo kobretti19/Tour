@@ -38,14 +38,13 @@ exports.signup = async (req, res, next) => {
     });
     createSendToken(newUser, 201, res);
     const token = signToken(newUser._id);
-    res.render('newUser', { newUser: newUser });
-    // res.status(201).json({
-    //   status: 'success',
-    //   token,
-    //   data: {
-    //     user: newUser,
-    //   },
-    // });
+    res.status(201).json({
+      status: 'success',
+      token,
+      data: {
+        user: newUser,
+      },
+    });
   } catch (err) {
     res.status(404).json({
       status: 'fail',
@@ -53,31 +52,6 @@ exports.signup = async (req, res, next) => {
     });
   }
 };
-exports.renderSignup = async (req, res, next) => {
-  try {
-    const newUser = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-      passwordConfirm: req.body.passwordConfirm,
-    });
-    const token = signToken(newUser._id);
-    res.render('newUser', { newUser: newUser });
-    // res.status(201).json({
-    //   status: 'success',
-    //   token,
-    //   data: {
-    //     user: newUser,
-    //   },
-    // });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err,
-    });
-  }
-};
-
 exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
@@ -104,10 +78,10 @@ exports.login = async (req, res, next) => {
     const token = signToken(user._id);
     console.log(token);
     createSendToken(user, 200, res);
-    // res.status(200).json({
-    //   status: 'success',
-    //   token,
-    // });
+    res.status(200).json({
+      status: 'success',
+      token,
+    });
     // res.redirect('homepage');
   } catch (err) {
     res.status(404).json({
@@ -192,4 +166,15 @@ exports.isLoggedIn = async (req, res, next) => {
     }
   }
   next();
+};
+exports.logOut = async (req, res, next) => {
+  try {
+    res.cookie('jwt', 'loggedout', {
+      expires: new Date(Date.now() + 1 * 1000),
+      httpOnly: true,
+    });
+    res.redirect('/homepage/overview');
+  } catch (err) {
+    return next(new AppError('Somithing goes wrong'));
+  }
 };

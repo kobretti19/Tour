@@ -2,13 +2,42 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  background-color: #a5bba5;
+  background-color: #dadfde77;
 }
 main {
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 110px;
+  margin-top: 20px;
   /* background-color: #262626; */
+}
+.bg-image {
+  background-image: url('https://media.tacdn.com/media/attractions-content--1x-1/14/37/d2/37.jpg');
+  background-position: 10%;
+  height: 80vh;
+  z-index: 1;
+  display: block;
+  /* -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px); */
+  opacity: 1;
+  position: relative;
+  background-repeat: no-repeat;
+}
+.content {
+  position: fixed;
+
+  top: 21%;
+  left: 50%;
+  z-index: 9999;
+  margin: auto;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Londrina Sketch', sans-serif;
+  font-weight: 1400;
+  font-style: bold;
+  font-size: 30px;
 }
 
 .header-container {
@@ -16,8 +45,23 @@ main {
   flex-direction: row;
   align-items: center;
   align-content: center;
-  justify-content: space-around;
-  background-color: #02412c94;
+  justify-content: space-between;
+  background-color: #444;
+  padding: 20px 20px;
+}
+#signUp {
+  border-radius: 10rem;
+  color: #f7f7f7;
+  /* text-transform: uppercase; */
+  /* font-size: 1rem; */
+  /* -webkit-box-align: center; */
+  padding: 7px 10px;
+  align-items: center;
+  transition: all 0.2s;
+  background: none;
+  cursor: pointer;
+  /* font-family: inherit; */
+  border: 1px solid currentColor !important;
 }
 .nav-login {
   display: flex;

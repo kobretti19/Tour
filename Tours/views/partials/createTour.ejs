@@ -1,5 +1,10 @@
 <div class="form-container">
-  <form class="form" action="/create" method="post">
+  <form
+    class="form"
+    action="/create"
+    method="post"
+    enctype="multipart/form-data"
+  >
     <input type="text" name="name" placeholder="Name" />
     <input type="number" name="duration" placeholder="duration" />
     <input
@@ -9,7 +14,16 @@
       placeholder="difficulty"
     />
     <input type="number" name="price" placeholder="price" />
-    <input type="text" name="imageCover" placeholder="imageCover" />
+
+    <input
+      id="photo"
+      type="file"
+      accept="image"
+      name="photo"
+      placeholder="imageCover"
+    />
+    <label for="photo"> Choose Cover</label>
+
     <input type="text" name="images" placeholder="images" />
     <input type="text" name="story" placeholder="Story" />
     <input type="date" name="cratedAt" placeholder="cratedAt" />
